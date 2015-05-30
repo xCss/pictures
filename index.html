@@ -5,23 +5,12 @@
 <title>Some Picture</title>
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=161829974&debug=true" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-var config = (function(){
-    var init = function(){
-        console.log(1);
-        WB2.login(function(ops){
-            console.log(ops);
-        });
-    };
-    return {
-        init:init
-    };
-})();
-window.onload = function(){
-    document.getElementsByTagName('button')[0].onclick = config.init;
-};
+WB2.login(function(ops){
+    console.log(ops);
+});
 </script>
 </head>
 <body>
-    <button>登录</button>
+    <button type="button" id="wb_login">登录</button>
 </body>
 </html>
