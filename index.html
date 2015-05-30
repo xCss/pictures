@@ -7,19 +7,17 @@
 <script type="text/javascript">
 var config = (function(){
     var init = function(){
-        document.getElementsByTagName('button')[0].onclick = function(){
-            console.log(1);
-            WB2.login(function(ops){
-                console.log(ops);
-            });
-        }
+        console.log(1);
+        WB2.login(function(ops){
+            console.log(ops);
+        });
     };
     return {
         init:init
     };
 })();
 window.onload = function(){
-    config.init();
+    document.getElementsByTagName('button')[0].onclick = config.init;
 };
 </script>
 </head>
