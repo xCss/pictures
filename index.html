@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta charset="UTF-8">
+<title>Some Picture</title>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=161829974&debug=true" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var config = (function(){
+    var init = function(){
+        document.getElementsByTagName('button')[0].onclick = function(){
+            WB2.login(function(ops){
+                console.log(ops);
+            });
+        }
+    };
+})();
+</script>
+</head>
+<body>
+    <button>登录</button>
+</body>
+</html>
