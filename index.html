@@ -6,12 +6,18 @@
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=161829974&debug=true" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 window.onload = function(){
-    $('button').onclick = function(){
-        var a = WB2.login(function(r){
-            console.log(r);
-        });
-        console.log(a);
-    };
+    var status = WB.checkLogin();
+    if(status) {
+        $('button').style.display="none";
+    }
+    else{
+        $('button').onclick = function(){
+            var a = WB2.login(function(r){
+                console.log(r);
+            });
+            console.log(a);
+        };
+    }
 };
 function $(selector){return document.querySelector(selector);};
 </script>
