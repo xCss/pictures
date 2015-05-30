@@ -5,9 +5,12 @@
 <title>Some Picture</title>
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=161829974&debug=true" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-WB2.login(function(ops){
-    console.log(ops);
-});
+window.onload = function(){
+    $('button').onclick = function(){
+        WB2.login();
+    };
+};
+function $(selector){return document.querySelector(selector);};
 </script>
 </head>
 <body>
