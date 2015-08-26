@@ -47,9 +47,9 @@ $(function(){
             r = r || $('.resolution').val();
 
 
-        var url = ['http://',S['s'][t],S['u']];
 
         for(var i=0 , imgs = S['images'] , len=S['images'].length ; i<len ; i++){
+            var url = ['http://',S['s'][t],S['u']];
             url.push(imgs[i]);
             url.push(r);
             sources.push('<p>'+url.join('')+'.jpg</p>');
