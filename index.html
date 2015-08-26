@@ -34,11 +34,10 @@ $(function(){
         if($this.hasClass('active')) return;
         $this.addClass('active').siblings('.tab').removeClass('active');
         getSources(t,r);
-    }).on('change','li .selection',function(e){
+    }).on('change','li .resolution',function(e){
         var $this = $(this),
             t = $('.tab.active').attr('t'),
             r = $this.val();
-        console.log(r);
         getSources(t,r);
     });
 
