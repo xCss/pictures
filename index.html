@@ -32,6 +32,7 @@ $(function(){
             t = $this.attr('t'),
             r = $('.resolution').val();
         if($this.hasClass('active')) return;
+        $this.addClass('active').siblings('.tab').removeClass('active');
         getSources(t,r);
     }).on('change','.selection',function(e){
         var $this = $(this),
