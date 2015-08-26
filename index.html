@@ -16,7 +16,7 @@ html,body{height:100%;}
 .container .menu .tab{cursor:pointer;background:#6B8CFF;}
 .container .menu .tab.active{background:#EC6F4B;}
 
-.container .context{overflow:auto;}
+.container .context{border:1px solid #ccc;margin-top:5px;border-radius:5px;width:100%;height:90%;}
 
 
 </style>
@@ -43,6 +43,8 @@ $(function(){
 
     var getSources = function(t , r){
 
+        var context = $('.context').val('');
+
         var sources = [];
             t = t || 0;
             r = r || $('.resolution').val();
@@ -53,10 +55,10 @@ $(function(){
             var url = ['http://',S['s'][t],S['u']];
             url.push(imgs[i]);
             url.push(r);
-            sources.push('<p>'+url.join('')+'.jpg</p>');
+            sources.push(url.join('')+'.jpg\n');
         }
 
-        $('.context').html(sources.join(''));
+        context.val(sources.join(''));
     }
 
     getSources();
@@ -79,9 +81,9 @@ $(function(){
                 </select>
             </li>
         </ul>
-        <div class="context">
+        <textarea class="context">
             
-        </div>
+        </textarea>
     </div>
 </body>
 </html>
